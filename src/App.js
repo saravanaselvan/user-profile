@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Profile from './components/Profile';
+import Orders from './components/Orders';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import styles from './App.module.css';
+
+class App extends Component {
+  state = {
+    user: null
+  };
+
+  componentDidMount() {
+    fetch('https://40vk5u4d93.execute-api.ap-southeast-1.amazonaws.com/stage')
+      .then(res => res.json() )
+      .then((result) => {
+        this.setState({ user: JSON.parse(result.body) });
+      });
+  }
+
+  render() {
+    const user = this.state.user ? this.state.user : {};
+    return (
+      <Router>
+        <div className={styles.container}>
+          <Route exact path="/" render={() => <Profile user={user}/>} />
+          <Route path="/orders" render={() => <Orders orders={user.orders} /> } />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

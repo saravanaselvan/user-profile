@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Open+Sans|Raleway|Roboto");
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  background: #f7f7f7;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 2em;
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  margin: auto;
+  width: 85%;
+  flex-direction: column;
+  font-size: 0.9em;
+}
