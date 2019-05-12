@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 import styles from './Order.module.css';
 
 const Order = ({order, showDescription}) => {
@@ -45,7 +46,7 @@ const Order = ({order, showDescription}) => {
         </div>
         { showDescription ? <div className={styles.description}><h3>Description</h3>{order.product.description}</div> : null }
       </Link>    
-      : ''
+      : <Loading />
   )
 }
 

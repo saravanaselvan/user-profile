@@ -33,7 +33,11 @@
 
 a, a:visited {
   text-decoration: none;
-  color: blue;
+  color: #0043ffcc;
+}
+
+.orders-link {
+  font-size: 20px;  
 }
 
 i {
@@ -45,7 +49,7 @@ i {
   border: 1px solid;
   border-radius: 20px;
   padding: 4px;
-  background: blue;
+  background: #0043ffcc;
   color: white;
   margin: 10px;  
 }

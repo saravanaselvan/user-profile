@@ -77,7 +77,7 @@ a.order {
 }
 
 @media (max-width: 700px) {
-  .order {
+  .order div:first-child {
     flex-direction: column;
   }
 

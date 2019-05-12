@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 import styles from './Profile.module.css';
 
 class Profile extends Component {
   render() {
-    const { name, company, email, address, about, orders, picture } = this.props.user ? this.props.user : {};
+    const { name, phone, email, address, about, orders, picture } = this.props.user ? this.props.user : {};
     return (
       <div>
         {this.props.user ? 
@@ -14,7 +15,7 @@ class Profile extends Component {
                 <img src={picture} alt='Profile'/>
               </div>
               <h2 className={styles.name}>{name.first} {name.last}</h2>
-              <h3>
+              <h3 className={styles['orders-link']}>
                 <Link to='/orders'>
                   <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                   Orders 
@@ -27,9 +28,9 @@ class Profile extends Component {
             <div className={`${styles['right-grid']} ${styles.card}`}>
               <section>
                 <h2>Contact</h2>
-                <div>{company}</div>
-                <div>{email}</div>
-                <div>{address}</div>
+                <div><i className="fa fa-envelope-o" aria-hidden="true"></i>{email}</div>
+                <div><i className="fa fa-phone" aria-hidden="true"></i>{phone}</div>
+                <div><i className="fa fa-map-marker" aria-hidden="true"></i>{address}</div>
               </section>
               <div>
                 <h2>About</h2>
@@ -37,7 +38,7 @@ class Profile extends Component {
               </div>
             </div>
           </div> 
-          : ''
+          : <Loading />
         }
       </div>
     );
