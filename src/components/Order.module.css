@@ -1,0 +1,57 @@
+.order {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 10px;  
+  margin-bottom: 10px;
+  box-shadow: 1px 1px #ddd;
+  background: white;
+}
+
+.order .description {
+  /* width: 30%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;   */
+}
+
+.order section {
+  padding-left: 15px;
+}
+
+.order section:first-child {
+  padding-left: 0px;
+}
+
+.ordered-on-label {
+  color: darkgrey;
+  font-size: 13px;  
+}
+
+.name {
+  flex-grow: 1;
+}
+.orderedon {
+  flex-grow: 2;
+}
+.status {
+  flex-grow: 3;
+}
+
+.status-text {
+  border: 1px solid;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;  
+}
+
+.status-text.returned {
+  background: red;  
+}
+
+.status-text.completed {
+  background: green;  
+}
+
+.status-text.transit {
+  background: blue;  
+}

@@ -1,18 +1,13 @@
 import React from 'react';
+import Order from './Order';
 
 const Orders = ({orders}) => {
+  console.log(orders);
   return (
     <div>
       {orders ? 
         orders.map((order) => 
-          <div key={order.id}>
-            {order.product.name}
-            {order.product.description}
-            <img src={order.product.picture} alt='Product' />
-            {order.product.orderDate}
-            {order.product.orderStatus}
-            {order.price}
-          </div>
+          <Order key={order.id} order={order}/>
         ) 
         : 
         ''

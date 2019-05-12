@@ -19,12 +19,12 @@ class App extends Component {
   }
 
   render() {
-    const user = this.state.user ? this.state.user : {};
+    const user = this.state.user ? this.state.user : null;
     return (
       <Router>
         <div className={styles.container}>
           <Route exact path="/" render={() => <Profile user={user}/>} />
-          <Route path="/orders" render={() => <Orders orders={user.orders} /> } />
+          <Route path="/orders" render={() => <Orders orders={user ? user.orders : null} /> } />
         </div>
       </Router>
     );
