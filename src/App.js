@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Profile from './components/Profile';
 import Orders from './components/Orders';
+import OrderDetails from './components/OrderDetails';
 
 import styles from './App.module.css';
 
@@ -24,7 +25,8 @@ class App extends Component {
       <Router>
         <div className={styles.container}>
           <Route exact path="/" render={() => <Profile user={user}/>} />
-          <Route path="/orders" render={() => <Orders orders={user ? user.orders : null} /> } />
+          <Route exact path="/orders" render={() => <Orders orders={user ? user.orders : null} /> } />
+          <Route exact path="/orders/:id" render={(props) => <OrderDetails {...props} orders={user ? user.orders : null} /> } />
         </div>
       </Router>
     );

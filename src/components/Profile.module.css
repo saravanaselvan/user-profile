@@ -49,3 +49,18 @@ i {
   color: white;
   margin: 10px;  
 }
+
+@media (max-width: 1050px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .right-grid {
+    margin-left: 0px;
+  }
+
+  .left-grid {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+}
